@@ -1,26 +1,24 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react"
+
+import styled from "@emotion/styled"
+import { css } from "@emotion/core"
+
+const AppWrapper = styled.div`
+  label: test-component;
+  background-color: ${({ theme }) => theme.bg};
+`
+const styling = theme => css`
+  label: test-c2-omponent;
+  background-color: ${theme.bg2};
+`
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    <AppWrapper>
+      <h1>Test</h1>
+      <header css={styling}>header</header>
+    </AppWrapper>
+  )
 }
 
-export default App;
+export default App
